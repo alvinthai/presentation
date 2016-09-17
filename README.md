@@ -10,6 +10,20 @@ If you are on linux, installation is very straight forward as `docker` takes adv
 
 If you are on Mac or Windows, you will need to use the `docker-machine` tools provided in the installation to run `docker` on a virtual machine.  This is somewhat seamless, just follow the [tutorials](https://www.docker.com/products/overview#/install_the_platform)
 
+create docker machine named dev:
+```
+docker-machine create -d virtualbox dev
+```
+
+start docker machine named dev:
+```
+docker-machine start dev
+```
+
+stop docker machine named dev:
+```
+docker-machine stop dev
+```
 
 ### Play with it
 Take a look at the [Hello World](https://docs.docker.com/engine/tutorials/dockerizing/) tutorial on [docker.com](https://docs.docker.com/engine/tutorials/dockerizing/)
@@ -44,4 +58,4 @@ source launch.sh
 deploy 5000 iris_prediction mydockerapp
 ```
 
-If executed correctly, there should be a webapp running on port 5000 of your `docker` network.  If you are on linux, your `docker` network will be your host computer.  If you are using `docker-machine`, the command `docker-machine ip` will return your docker network, ie:  `chrome $(docker-machine ip):5000`
+If executed correctly, there should be a webapp running on port 5000 of your `docker` network.  If you are on linux, your `docker` network will be your host computer.  If you are using `docker-machine`, the command `docker-machine ip $"machine"` will return your docker network, ie:  `chrome $(docker-machine ip):5000`
